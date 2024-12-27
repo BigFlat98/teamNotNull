@@ -31,6 +31,16 @@ class Products extends Sequelize.Model {
                 type: Sequelize.STRING(20),
                 allowNull: false,
             },
+            created_at:{
+                type: Sequelize.DATE,
+                allowNull: false,
+                defaultValue: Sequelize.NOW,
+            },
+            updated_at:{
+                type: Sequelize.DATE,
+                allowNull: true,
+                defaultValue: Sequelize.NOW,
+            },
         },{
             sequelize,
             timestamps: false,

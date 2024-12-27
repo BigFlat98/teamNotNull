@@ -50,7 +50,17 @@ class Accounts extends Sequelize.Model {
         savedMoney:{
             type: Sequelize.INTEGER,
             allowNull: true,
-        }
+        },
+        created_at:{
+            type: Sequelize.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.NOW,
+        },
+        updated_at:{
+            type: Sequelize.DATE,
+            allowNull: true,
+            defaultValue: Sequelize.NOW,
+        },
     },{
         sequelize,
         timestamps: false,

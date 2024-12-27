@@ -20,66 +20,50 @@ const SupplyFactory = require('./model_supplyFactory.js');
 const env = process.env.NODE_ENV || 'development';
 const config = require('../config/config')[env];
 const db = {};
-console.log("check config on model_index.js",config);
 
 //db 연결
 const sequelize = new Sequelize(config.database, config.username, config.password, config);
 db.sequelize = sequelize;
-console.log("check sequelize on model_index.js",sequelize);
 
 //테이블 생성
 db.Accounts = Accounts;
 Accounts.initiate(sequelize);
-console.log("check create table Accounts : ",Accounts);
 
 db.Buckets = Buckets;
 Buckets.initiate(sequelize);
-console.log("check create table Buckets : ",Buckets);   
 
 db.Coupons = Coupons;
 Coupons.initiate(sequelize);
-console.log("check create table Coupons : ",Coupons);
 
 db.Likes = Likes;
 Likes.initiate(sequelize);
-console.log("check create table Likes : ",Likes);
 
 db.Orders = Orders;
 Orders.initiate(sequelize);
-console.log("check create table Orders : ",Orders);
 
 db.Postes = Postes;
 Postes.initiate(sequelize);
-console.log("check create table Postes : ",Postes);
 
-console.log("start create table ProductLocations");
 db.ProductLocations = ProductLocations;
 ProductLocations.initiate(sequelize);
-console.log("check create table ProductLocations : ",ProductLocations);
 
 db.Products = Products;
 Products.initiate(sequelize);
-console.log("check create table Products : ",Products);
 
 db.Ratings = Ratings;
 Ratings.initiate(sequelize);
-console.log("check create table Ratings : ",Ratings);
 
 db.RecommendTags = RecommendTags;
 RecommendTags.initiate(sequelize);
-console.log("check create table RecommendTags : ",RecommendTags);   
 
 db.Replies = Replies;
 Replies.initiate(sequelize);
-console.log("check create table Replies : ",Replies);
 
 db.Searched = Searched;
 Searched.initiate(sequelize);
-console.log("check create table Searched : ",Searched);
 
 db.SupplyFactory = SupplyFactory;
 SupplyFactory.initiate(sequelize);
-console.log("check create table SupplyFactory : ",SupplyFactory);
 
 
 //테이블 관계 설정

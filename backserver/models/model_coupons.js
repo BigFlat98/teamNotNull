@@ -11,9 +11,19 @@ class Coupons extends Sequelize.Model {
                 type: Sequelize.FLOAT,
                 allowNull: false,
             },
+            created_at:{
+                type: Sequelize.DATE,
+                allowNull: false,
+                defaultValue: Sequelize.NOW,
+            },
+            updated_at:{
+                type: Sequelize.DATE,
+                allowNull: true,
+                defaultValue: Sequelize.NOW,
+            },
         },{
             sequelize,
-            timestamps: true,
+            timestamps: false,
             underscored: false,
             modelName: 'Coupons',
             tableName: 'Coupons',

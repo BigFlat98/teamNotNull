@@ -24,9 +24,19 @@ class Orders extends Sequelize.Model {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
+            created_at:{
+                type: Sequelize.DATE,
+                allowNull: false,
+                defaultValue: Sequelize.NOW,
+            },
+            updated_at:{
+                type: Sequelize.DATE,
+                allowNull: true,
+                defaultValue: Sequelize.NOW,
+            },
         },{
             sequelize,
-            timestamps: true,
+            timestamps: false,
             underscored: false,
             modelName: 'Orders',
             tableName: 'Orders',
