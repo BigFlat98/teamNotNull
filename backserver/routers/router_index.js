@@ -178,7 +178,7 @@ router.get('/',async(req,res)=>{
             product_kind: 'drink'
         },
         order:[
-            ['createdAt','DESC']
+            ['created_at','DESC']
         ],
         limit: 10,
         raw:true

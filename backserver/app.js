@@ -6,6 +6,7 @@ const cors = require('cors');
 const path = require('path');
 const indexRouter = require('./routers/router_index.js');
 
+//서번 생성
 const app = express();
 app.set('port',process.env.PORT);
 
@@ -20,15 +21,18 @@ sequelize.sync({force:false})
 });
 
 //미들웨어 
-app.use(express.static(path.join(__dirname,'public')));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+app.use('/',express.static(path.join(__dirname,'uploads')));
 const corsOptions = {
     origin: process.env.FRONT_URL,
     credentials: true,
     optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
+
+
+
 
 //라우터 
 app.use('/',indexRouter);
